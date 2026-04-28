@@ -1,3 +1,33 @@
 spring:
   application:
     name: nerochat
+
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      pool-name: SpringBootHikariCP
+
+      data-source-properties:
+        tcpKeepAlive: true
+        socketTimeout: 30
+        connectTimeout: 10
+
+  jpa:
+    open-in-view: false
+
+jwt:
+  secret: ${JWT_SECRET_BASE64}
+
+email:
+  verification:
+    expiry-hours: 24
+  password-reset:
+    expiry-minutes: 15

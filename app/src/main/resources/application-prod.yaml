@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    properties:
+      format_sql: false
+      show_sql: false
+
+jwt:
+  expiration-minutes: 15
